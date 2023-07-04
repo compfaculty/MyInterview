@@ -1,3 +1,6 @@
+from pytest_benchmark.plugin import benchmark
+
+
 def int_to_roman(number):
     if 0 > number > 3999:
         raise ValueError('should be in  0 .. 3999 : {}'.format(number))

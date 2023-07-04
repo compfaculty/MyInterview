@@ -1,16 +1,16 @@
-def roman_to_int(s: str) -> int:
+def roman_to_int(roman_number: str) -> int:
     roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     num = 0
-    l = len(s)
+    roman_str_len = len(roman_number)
     i = 0
     while True:
-        if i + 1 > l:
+        if i + 1 > roman_str_len:
             break
-        if i + 1 == l:
-            num += roman[s[-1]]
+        if i + 1 == roman_str_len:
+            num += roman[roman_number[-1]]
             break
-        cur = s[i]
-        nxt = s[i + 1]
+        cur = roman_number[i]
+        nxt = roman_number[i + 1]
         if cur == 'I' and nxt in ('V', 'X'):
             num += roman[nxt] - 1
             i += 2

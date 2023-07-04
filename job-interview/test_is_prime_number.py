@@ -1,3 +1,6 @@
+from pytest_benchmark.plugin import benchmark
+
+
 def is_prime_number(n: int) -> bool:
     if n <= 1:
         return False
@@ -36,3 +39,13 @@ def test_is_prime_number():
     assert is_prime_number(67) is True
     assert is_prime_number(4) is False
     assert is_prime_number(44) is False
+
+
+def test_is_prime_number_benchmark(benchmark):
+    # benchmark something
+    result = benchmark.pedantic(is_prime_number, args=(67,), kwargs={}, iterations=10, rounds=100)
+
+    # Extra code, to verify that the run completed correctly.
+    # Sometimes you may want to check the result, fast functions
+    # are no good if they return incorrect results :-)
+    assert result is True
