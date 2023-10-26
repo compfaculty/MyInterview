@@ -1,4 +1,4 @@
-from collections import OrderedDict, defaultdict
+from collections import defaultdict
 
 
 # def find_anagrams_v0(words: list) -> int:
